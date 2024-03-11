@@ -79,8 +79,45 @@ So, inorder to apply the gradient descent method, the derivative of Loss w.r.t t
 
 <h2>4. Architecture of One Hidden Layer Neural Network:</h2>
 
+In case of single hidden layer neural network, there is a hidden layer and output layer. The hidden layer contains a dense layer that receives input from the feature set corresponding to one sample. The Dense layer of Hidden LAayer has its own set of Weights and its own activation function (Sigmoid, tanh, ReLu, LEAKY ReLU). One thing to note that the Raw Scores vector <b>Z</b> is pointwise activated in any hidden layer. The architecture is given as
+<p align = "center">
+  <img width = "700" height = "250" src = "https://github.com/aniket-chakraborty2001/Deep_Learning_and_TensorFlow/blob/main/Images/oneHLNN.png"
+</p>
+<p>
+  <ul>
+    <li>The Dense Layer-1 is represented by the notation <b>Z<sup>[1]</sup></b>and it owns a set of weights; weight matrix <b>W<sup>[1]</sup></b>; of shape (4&times6) {Bias Added}</li>
+    <li>The Raw Scores Vector <b>Z<sup>[1]</sup></b> is of shape (4&times1) whose elements are Z<sub>1</sub><sup>[1]</sup>, Z<sub>2</sub><sup>[1]</sup>, Z<sub>3</sub><sup>[1]</sup>, Z<sub>4</sub><sup>[1]</sup> respectively</li>
+    <li>This Raw Score vector is pointwise activated to get the Activated Raw Scores Vectors, denoted as <b>a<sup>[1]</sup></b>, is of shape (4&times1), same as <b>Z<sup>[1]</sup></b></li>
+    <li>Then the Whole NN move to the output layer that has its own Dense layer <b>Z<sup>[2]</sup> and SoftMax Activation Layer <b>a<sup>[2]</sup></b></li>
+    <li>The Weights Matrix <b>W<sup>[2]</sup></b> is of shape (3&times5), shape of <b>Z<sup>[2]</sup></b> is (3&times1) which is same as shape of <b>a<sup>[2]</sup></b></li>
+    <li>Then The CCE Loss is calculated which is a scalar quantity</li>
+  </ul>
+</p>
+<hr>
 
+<h2>5. Different Types of Activation Functions in Deep Learning:</h2>
 
+In case of Hidden Layer, there are 4 mostly used Activation Functions that activates the Raw scores vectors pointwise. Among them Leaky ReLU is the most sufficient one as it ommits the problem of vanishing gradient. The other functions Sigmoid, Tanh and ReLU also works good, but it has vanishing gradient problem. These functions are given in the following picture
+<p align = "center">
+  <img width = "700" height = "300" src = "https://github.com/aniket-chakraborty2001/Deep_Learning_and_TensorFlow/blob/main/Images/ActivationFnc.png">
+</p>
+The gradient of these Acivation functions are also helpful in determining the optimal weights that is calculated by using the Gradient Descent Method. By looking at the gradients it can be observed there are some limitations with the first three Activation Functions. They are given in the following picture.
+<p align = "center">
+  <img width = "700" height = "300" src = "https://github.com/aniket-chakraborty2001/Deep_Learning_and_TensorFlow/blob/main/Images/gradActivationFnc.png">
+</p>
+<hr>
+
+<h2>6. Backward Propagation In Single Hidden Layer Neural Network:</h2>
+
+Just like zero hidden layer neural network, backward propagation works similarly in case of one hidden layer neural network. The only difference is in one hidden layer neural network the gradient calculation is slightly complex that a simple 0 hidden layer neural network. The backward flow of gradient is given as
+<p align = "center">
+  <img width = "700" height = "300" src = "https://github.com/aniket-chakraborty2001/Deep_Learning_and_TensorFlow/blob/main/Images/oneHLgradCalculation.png">
+</p>
+<hr>
+
+<h2>7. Deep L-Layered Neural Network Architecture:</h2>
+
+Suppose, we consider that there are 2 hidden layers in a neural network. The architecture can be enumerated similarly if there are l numbers of hidden layers. For a 3-layered neural network(2 Hidden layers) the neural network architecture is given as
 
 
 
