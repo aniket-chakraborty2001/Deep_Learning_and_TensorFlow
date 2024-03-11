@@ -127,10 +127,10 @@ Suppose, we consider that there are 2 hidden layers in a neural network. The arc
   <li>In the above picture it is a 3-layered deep neural network model, so there are total (3+1)=4 layers</li>
   <li>Out of this 4 layers, two layers are reserved for input and output layer. So there are total (4-2)=2 hidden layers</li>
   <li>In a 3-layered deep neural network model, layer 3 indicates the output layer. This can be generalised for l layers.</li>
-  <li>The number of nodes in the l<sup>th</sup>layer is denoted by the term n<sup>[l]</sup>. For the above case, nu,number of nodes in input layer is n<sup>[0]</sup> = 5 and so on.</li>
-  <li>The Raw Scores vector for the l<sup>th</sup>hidden layer is expressed as Z<sup>[l]</sup>of shape n<sup>[l]</sup></li> 
-  <li>The Activated Raw Scores Vector for the l<sup>th</sup>hidden layer is expressed as a<sup>[l]</sup>of shape n<sup>[l]</sup> </li>
-  <li>The weights Matrix Associated with the l<sup>th</sup>Dense layer is W<sup>[l]</sup> that is of shape (n<sup>[l]</sup> &times n<sup>[l-1]</sup>)</li>
+  <li>The number of nodes in the l<sup>th</sup> layer is denoted by the term n<sup>[l]</sup>. For the above case, nu,number of nodes in input layer is n<sup>[0]</sup> = 5 and so on.</li>
+  <li>The Raw Scores vector for the l<sup>th</sup> hidden layer is expressed as Z<sup>[l]</sup>of shape n<sup>[l]</sup></li> 
+  <li>The Activated Raw Scores Vector for the l<sup>th</sup> hidden layer is expressed as a<sup>[l]</sup> of shape n<sup>[l]</sup> </li>
+  <li>The weights Matrix Associated with the l<sup>th</sup> Dense layer is W<sup>[l]</sup> that is of shape (n<sup>[l]</sup> &times n<sup>[l-1]</sup>)</li>
   </ul>
 
 <h4>Brief Description of Layers in a 3-layered Deep Neural Network:</h4>
