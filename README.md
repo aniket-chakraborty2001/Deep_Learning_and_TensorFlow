@@ -121,9 +121,7 @@ Suppose, we consider that there are 2 hidden layers in a neural network. The arc
 <p align = "center">
   <img width = "700" height = "300" src = "https://github.com/aniket-chakraborty2001/Deep_Learning_and_TensorFlow/blob/main/Images/DeepLNN.png">
 </p>
-<h4>Indexing Scheme in Deep L-layered Neural Network Architecture:</h4>
-
-The generalized Indexing scheme for the Deep L-layered Neural Network is gievn as - 
+<h4>Indexing Scheme in Deep L-layered Neural Network Architecture:</h4> The generalized Indexing scheme for the Deep L-layered Neural Network is gievn as - 
 <ul>
   <li>The layer index for Deep Learning starts from 0, so the input layer has index 0</li>
   <li>In the above picture it is a 3-layered deep neural network model, so there are total (3+1)=4 layers</li>
