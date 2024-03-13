@@ -174,6 +174,13 @@ Suppose, we consider that there are 2 hidden layers in a neural network. The arc
     </ol>
   </li>
 </ul>
+<hr>
 
+<h2>8. Steps In Forward Propagation:</h2>
+
+The steps in forward propagation starts from the input layer denoted as <b>a<sup>[0]</sup></b> and it ends by giving the loss L by applying the SoftMax Activation Function on the predicted Probabilities vector denoted as <b>a<sup>[3]</sup></b> or <b>&#375</b>. The diagram for forward propagation is given as
+<P align = "center">
+  <img  width = "500" height = "200"src = "https://github.com/aniket-chakraborty2001/Deep_Learning_and_TensorFlow/blob/main/Images/Forward_Propagation.jpg">
+</P>
 
 
