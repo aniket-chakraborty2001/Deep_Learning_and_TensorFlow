@@ -132,8 +132,48 @@ Suppose, we consider that there are 2 hidden layers in a neural network. The arc
   <li>The Activated Raw Scores Vector for the l<sup>th</sup> hidden layer is expressed as a<sup>[l]</sup> of shape n<sup>[l]</sup> </li>
   <li>The weights Matrix Associated with the l<sup>th</sup> Dense layer is W<sup>[l]</sup> that is of shape (n<sup>[l]</sup> &times n<sup>[l-1]</sup>)</li>
   </ul>
-
 <h4>Brief Description of Layers in a 3-layered Deep Neural Network:</h4>
+<p align = "center">
+  <img width = "700" height = "300" src = "https://github.com/aniket-chakraborty2001/Deep_Learning_and_TensorFlow/blob/main/Images/DeepLNN.png">
+</p>
+<ul>
+  <li>
+    <b>Input Layer:</b> It is the first layer of a Deep L-layered Neural Network, having layer index 0. Often this layer is denoted as layer <b>a<sup>[0]</sup></b>. This layer contains the features that are considered as input of the Deep L-layered Neural Network. In the above picture we have, there are total 5 features, so n<sup>[0]</sup> = 5.
+  </li>
+  <li>
+    <b>Hidden Layer - 1:</b> After the Input layer (denoted as <b>a<sup>[0]</sup></b>), the hidden layer (layer index 1) comes. The purpose of hidden layer is to filter out the connection between different nodes or neurons that exists in a Neural Network. This Hidden Layer - 1 has two sub-layers, Dense Layer - 1 and Activation Layer - 1 respectively.
+    <ol>
+      <li>
+        <b>Dense Layer - 1:</b> The Dense Layer - 1 , also denoted by <b>Z<sup>[1]</sup></b> owns a set of weights that are associated with the correct output class labels and the number of features. In general, the bias term b is added to the weights matrix in order to make it go in one shot. In the above picture, number of nodes in <b>Z<sup>[1]</sup></b> is n<sup>[1]</sup> = 4. The weights matrix <b>W<sup>[1]</sup></b>that is associated with this layer is of shape (4&times6) [considering the bias term b, so number of columns becomes (5+1) = 6]. The shape of the vector <b>Z<sup>[1]</sup></b> is (4&times1). This <b>Z<sup>[1]</sup></b> is also known as Raw Scores vector for layer with index 1. The Raw Scores Vector is calculated as <b>Z<sup>[1]</sup> = W<sup>[1]</sup>a<sup>[0]</sup></b>
+      </li> 
+      <li>
+        <b>Activation Layer - 1:</b> After the Raw Scores are calculated by the 4 nodes that corresponds to 6 , output features (bias term added) are pointwise activated in this part of the Neural Network. The activation functions that are commonly used in this layer are Sigmoid function, Tanh function, ReLU function and Leaky ReLU function. The activated Raw Scores Vector for Activation layer 1 is denoted by  <b>a<sup>[1]</sup></b> and the shape of <b>a<sup>[1]</sup></b> is same as <b>Z<sup>[1]</sup></b> which is (4&times1). The Activated Raw Scores vector is calculated as <b>a<sup>[1]</sup> = g<sup>[1]</sup>(Z<sup>[1]</sup>)</b>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <b>Hidden Layer - 2:</b> After the Hidden layer 1 is worked properly, the connections of nodes or neurons goes through the Hidden layer 2 (layer index 2), The purpose of hidden layer -2 is to filter out the connection between different nodes or neurons that exists in a Neural Network. This Hidden Layer - 2 has two sub-layers, Dense Layer - 2 and Activation Layer - 2 respectively.
+    <ol>
+      <li>
+        <b>Dense Layer - 2:</b> The Dense Layer - 2 , also denoted by <b>Z<sup>[2]</sup></b> owns a set of weights that are associated with the nodes of previous layers. In general, the bias term b is added to the weights matrix in order to make it go in one shot. In the above picture, number of nodes in <b>Z<sup>[2]</sup></b> is n<sup>[2]</sup> = 4. The weights matrix <b>W<sup>[2]</sup></b> that is associated with this layer is of shape (4&times5) [considering the bias term b, so number of columns becomes (4+1) = 5]. The shape of the vector <b>Z<sup>[2]</sup></b> is (4&times1). This <b>Z<sup>[2]</sup></b> is also known as Raw Scores vector for layer with index 2. The Raw Scores Vector is calculated as <b>Z<sup>[2]</sup> = W<sup>[2]</sup>a<sup>[1]</sup></b>
+      </li>
+      <li>
+        <b>Activation Layer - 2:</b> After the Raw Scores are calculated by the previous layer (bias term added)  the outputs are pointwise activated in this part of the Neural Network. The activation functions that are commonly used in this layer are Sigmoid function, Tanh function, ReLU function and Leaky ReLU function. The activated Raw Scores Vector for Activation layer 2 is denoted by  <b>a<sup>[2]</sup></b> and the shape of <b>a<sup>[2]</sup></b> is same as <b>Z<sup>[2]</sup></b> which is (4&times1). The Activated Raw Scores vector is calculated as <b>a<sup>[2]</sup> = g<sup>[2]</sup>(Z<sup>[2]</sup>)</b>. One thing to note that <b>g<sup>[1]</sup> and g<sup>[2]</sup></b> may or may not be same.
+      </li>
+    </ol>
+  </li>
+  <li>
+    <b>Output Layer:</b> In the last layer (layer index 3), the Neural network calculates the loss of the Neural Network Model. The number of nodes that are used in the output layer always equals to the numbr of output categories. In the above picture this is 3, so clearly, n<sup>[3]</sup> = 3
+    <ol>
+      <li>
+        <b>Dense Layer - 3:</b> Same as other dense layer, in this layer the neurons are used to collect the data that are processed by the previous neurons. The Raw Scores vector for layer index 3 is represented as <b>Z<sup>[3]</sup></b> which is a (3&times1) vector. This dense layer 3 owns a set of weights. So, the weights matrix <b>W<sup>[3]</sup></b> is of shape (3&times5). The Raw Scores Vector is calculated as <b>Z<sup>[3]</sup> = W<sup>[3]</sup>a<sup>[2]</sup></b>
+      </li>
+      <li>
+        <b>SoftMax Activation Layer - 3:</b> In the last step, the SoftMax Activated Raw Scores are calculated as <b>a<sup>[3]</sup> = SoftMax(Z<sup>[3]</sup>)</b>. The shape of <b>a<sup>[3]</sup></b> is same as <b>Z<sup>[3]</sup></b> which is a (3&times1). In the output layer, the activation function is completely connected unlike the previous activation layers. 
+      </li>
+    </ol>
+  </li>
+</ul>
 
 
 
